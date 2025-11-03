@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { BaberService } from "@/services/BarberService";
 import { Barber } from "@/model/Baber";
 
@@ -9,22 +9,23 @@ export function useBarbers() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
+  const loadData = useCallback(async () => {
+    setLoading(true);
+    setError(null);
     const service = new BaberService();
-    async function loadData() {
-      try {
-        const data = await service.getBaber();
-        console.log(data);
-        setBabers(data as Barber[]);
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
+    try {
+      const data = await service.getBaber();
+      setBabers(data as Barber[]);
+    } catch (err: any) {
+      setError(err.message || "Error al cargar los barberos");
+    } finally {
+      setLoading(false);
     }
-
-    loadData();
   }, []);
 
-  return { barbers, loading, error };
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
+  return { barbers, loading, error, refetch: loadData };
 }

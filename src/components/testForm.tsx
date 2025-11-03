@@ -2,25 +2,38 @@
 import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
+import { IconPlus } from "@tabler/icons-react";
 
 export default function TestForm() {
   async function handleSubmit() {
-    await addDoc(collection(db, "citas"), {
-      nombreCliente: "Josue",
-      servicio: "Corte",
-      fecha: "2025-11-03",
-      hora: "14:00",
-      estado: "pendiente",
-    });
-    alert("Cita creada correctamente");
+    try {
+      await addDoc(collection(db, "citas"), {
+        nombreCliente: "Josue",
+        servicio: "Corte",
+        fecha: "2025-11-03",
+        hora: "14:00",
+        estado: "pendiente",
+        timestampCreation: new Date(),
+      });
+      toast.success("Cita creada correctamente", {
+        description: "La cita ha sido registrada en el sistema",
+      });
+    } catch (error: any) {
+      toast.error("Error al crear la cita", {
+        description: error.message || "Por favor, intenta nuevamente",
+      });
+    }
   }
 
   return (
     <Button
-      className="bg-purple-600 text-black text-base font-bold p-5 h-auto w-auto cursor-pointer hover:bg-purple-600/60 rounded-md"
       onClick={handleSubmit}
+      variant="default"
+      className="gap-2"
     >
-      Crear cita (Pruebame 👉👈🥺)
+      <IconPlus className="size-4" />
+      Crear cita de prueba
     </Button>
   );
 }

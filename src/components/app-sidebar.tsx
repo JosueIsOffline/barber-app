@@ -17,6 +17,7 @@ import {
   IconSearch,
   IconSettings,
   IconUsers,
+  IconCalendarEvent,
 } from "@tabler/icons-react";
 
 import { NavDocuments } from "@/components/nav-documents";
@@ -49,22 +50,12 @@ const data = {
     {
       title: "Barbers",
       url: "/barbers",
-      icon: IconListDetails,
-    },
-    {
-      title: "Analytics",
-      url: "#",
-      icon: IconChartBar,
-    },
-    {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "Team",
-      url: "#",
       icon: IconUsers,
+    },
+    {
+      title: "Citas",
+      url: "/appointments",
+      icon: IconCalendarEvent,
     },
   ],
   navClouds: [
