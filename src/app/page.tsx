@@ -1,6 +1,11 @@
 import TestForm from "@/components/testForm";
 import { Button } from "@/components/ui/button";
-import { IconLayoutDashboard, IconUsers, IconCalendarEvent, IconSettings } from "@tabler/icons-react";
+import {
+  IconLayoutDashboard,
+  IconUsers,
+  IconCalendarEvent,
+  IconSettings,
+} from "@tabler/icons-react";
 import Link from "next/link";
 import {
   Card,
@@ -9,15 +14,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import ParticipantsSection from "@/components/participant-section";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-8 pb-20 gap-8 sm:p-20">
       <main className="flex flex-col gap-8 w-full max-w-4xl">
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold tracking-tight">
-            Barber App
-          </h1>
+          <h1 className="text-4xl font-bold tracking-tight">Barber App</h1>
           <p className="text-muted-foreground text-lg">
             Sistema de gestión para tu barbería
           </p>
@@ -30,9 +34,7 @@ export default function Home() {
                 <IconLayoutDashboard className="size-5" />
                 Dashboard
               </CardTitle>
-              <CardDescription>
-                Visión general de tu barbería
-              </CardDescription>
+              <CardDescription>Visión general de tu barbería</CardDescription>
             </CardHeader>
             <CardContent>
               <Link href="/dashboard">
@@ -49,9 +51,7 @@ export default function Home() {
                 <IconUsers className="size-5" />
                 Barberos
               </CardTitle>
-              <CardDescription>
-                Gestiona tu equipo de barberos
-              </CardDescription>
+              <CardDescription>Gestiona tu equipo de barberos</CardDescription>
             </CardHeader>
             <CardContent>
               <Link href="/barbers">
@@ -82,6 +82,8 @@ export default function Home() {
           </Card>
         </div>
       </main>
+
+      <ParticipantsSection />
     </div>
   );
 }
