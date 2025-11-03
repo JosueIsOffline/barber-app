@@ -1,14 +1,27 @@
 import TestForm from "@/components/testForm";
+import { Button } from "@/components/ui/button";
+import { Layout } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
+  const items = [
+    {
+      title: "page 1",
+      url: "url",
+    },
+  ];
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <div className="flex flex-col justify-content items-center gap-5">
-        <div className="flex justify-center items-center h-70 w-70 bg-amber-500">
-          <span className="text-5xl font-bold text-black">Orange</span>
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <Link href="/dashboard">
+            <Button>
+              <Layout className="size-4" />
+              Go to dashboard
+            </Button>
+          </Link>
         </div>
-        <TestForm />
-      </div>
+      </main>
     </div>
   );
 }

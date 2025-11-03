@@ -1,6 +1,7 @@
 "use client";
 import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { Button } from "./ui/button";
 
 export default function TestForm() {
   async function handleSubmit() {
@@ -15,11 +16,11 @@ export default function TestForm() {
   }
 
   return (
-    <button
+    <Button
       className="bg-purple-600 text-black text-base font-bold p-5 h-auto w-auto cursor-pointer hover:bg-purple-600/60 rounded-md"
       onClick={handleSubmit}
     >
       Crear cita (Pruebame 👉👈🥺)
-    </button>
+    </Button>
   );
 }
