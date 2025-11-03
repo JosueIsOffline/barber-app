@@ -1,0 +1,38 @@
+[
+  {
+    "id": "2024-0235",
+    "name": "Josué Hernández",
+    "imageUrl": "https://i.pinimg.com/736x/8d/16/90/8d16902ae35c1e982c2990ff85fa11fb.jpg",
+    "participated": true
+  },
+  {
+    "id": "2024-0250",
+    "name": "Danuel Cuevas",
+    "imageUrl": "",
+    "participated": true
+  },
+  {
+    "id": "2024-0229",
+    "name": "Ismarlin Martinez",
+    "imageUrl": "",
+    "participated": true
+  },
+  {
+    "id": "2024-0276",
+    "name": "Eduardo Tejada",
+    "imageUrl": "",
+    "participated": true
+  },
+  {
+    "id": "2024-1742",
+    "name": "Mirelys De La Rosa",
+    "imageUrl": "",
+    "participated": true
+  },
+  {
+    "id": "2024-0252",
+    "name": "Cristopher Gerrero",
+    "imageUrl": "",
+    "participated": false
+  }
+]
