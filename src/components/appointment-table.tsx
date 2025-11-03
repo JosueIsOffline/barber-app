@@ -73,7 +73,6 @@ export function AppointmentTable({
 }: AppointmentTableProps) {
   const [sorting, setSorting] = React.useState<SortingState>([
     { id: "fecha", desc: false },
-    { id: "hora", desc: false },
   ]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []

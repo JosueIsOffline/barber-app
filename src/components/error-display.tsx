@@ -35,3 +35,5 @@ export function ErrorDisplay({ error, onRetry, title = "Error al cargar datos" }
 
 
 
+
+
