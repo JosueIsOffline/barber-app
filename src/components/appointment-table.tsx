@@ -72,8 +72,9 @@ export function AppointmentTable({
   onAdd,
 }: AppointmentTableProps) {
   const [sorting, setSorting] = React.useState<SortingState>([
-    { id: "fecha", desc: false },
+    { id: "fecha", desc: true },
   ]);
+
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
@@ -277,6 +278,8 @@ export function AppointmentTable({
       rowSelection,
     },
   });
+
+  console.log(table.getRowModel().rows.length);
 
   return (
     <div className="w-full space-y-4">
