@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import {
   IconCamera,
   IconChartBar,
@@ -154,13 +153,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
               <Link href="/dashboard" className="flex items-center gap-2">
-                <Image
+                <img
                   src="/trimly-logo.png"
                   alt="Trimly Logo"
                   width={32}
                   height={32}
                   className="object-contain flex-shrink-0 rounded-lg"
-                  priority
                 />
                 <span className="text-base font-semibold">Trimly</span>
               </Link>
